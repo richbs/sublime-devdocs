@@ -18,7 +18,7 @@ class DevDocsSearchSelectionCommand(sublime_plugin.TextCommand):
         for selection in self.view.sel():
             # if the user didn't select anything, search the currently highlighted word
             if selection.empty():
-                text = self.view.word(selection)
+                selection = self.view.word(selection)
 
             text = self.view.substr(selection)
             SearchFor(text)
